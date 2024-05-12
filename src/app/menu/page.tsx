@@ -33,7 +33,7 @@ const MenuPage = async () => {
                 category.color === "black" ? "white" : "red-500"
               } py-2 px-4 rounded-md`}
             >
-              Explore
+              Keşfedin
             </button>
           </div>
         </Link>

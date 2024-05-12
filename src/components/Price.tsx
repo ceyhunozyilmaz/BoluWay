@@ -82,7 +82,7 @@ const Price = ({ product }: { product: ProductType }) => {
           className="uppercase w-56 bg-red-500 text-white p-3 ring-1 ring-red-500"
           onClick={handleCart}
         >
-          Sepete ekle
+          Sepete Ekle
         </button>
       </div>
     </div>

@@ -7,12 +7,12 @@ export const GET = async (req: NextRequest) => {
   const cat = searchParams.get("cat");
 
   try {
-    const product = await prisma.product.findMany({
+    const products = await prisma.product.findMany({
       where: {
         ...(cat ? { catSlug: cat } : { isFeatured: true }),
       },
     });
-    return new NextResponse(JSON.stringify(product), { status: 200 });
+    return new NextResponse(JSON.stringify(products), { status: 200 });
   } catch (err) {
     console.log(err);
     return new NextResponse(
@@ -21,7 +21,18 @@ export const GET = async (req: NextRequest) => {
     );
   }
 };
-
-export const POST = () => {
-  return new NextResponse("Hello", { status: 200 });
+export const POST = async (req: NextRequest) => {
+  try {
+    const body = await req.json();
+    const product = await prisma.product.create({
+      data: body,
+    });
+    return new NextResponse(JSON.stringify(product), { status: 201 });
+  } catch (err) {
+    console.log(err);
+    return new NextResponse(
+      JSON.stringify({ message: "Something went wrong!" }),
+      { status: 500 }
+    );
+  }
 };

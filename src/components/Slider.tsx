@@ -1,21 +1,22 @@
 "use client";
 import Image from "next/image";
+import Link from "next/link";
 import React, { useEffect, useState } from "react";
 
 const data = [
   {
     id: 1,
-    title: "always fresh & always crispy & always hot",
+    title: "her zaman taze, her zaman çıtır ve her zaman sıcak",
     image: "/slide1.png",
   },
   {
     id: 2,
-    title: "we deliver your order wherever you are in NY",
+    title: "İstanbul'un neresinde olursanız olun siparişinizi teslim ediyoruz",
     image: "/slide2.png",
   },
   {
     id: 3,
-    title: "the best pizza to share with your family",
+    title: "Ailenizle paylaşabileceğiniz en iyi pizza",
     image: "/slide3.jpg",
   },
 ];
@@ -33,15 +34,17 @@ const Slider = () => {
   }, []);
 
   return (
-    <div className="flex flex-col h-[calc(100vh-6rem)] md:h-[calc(100vh-9rem)] lg:flex-row bg-fuchsia-50">
+    <div className="flex flex-col h-[calc(100vh-6rem)] md:h-[calc(100vh-9rem)] lg:flex-row bg-sky-50">
       {/* TEXT CONTAINER */}
       <div className="flex-1 flex items-center justify-center  flex-col gap-8 text-red-500  font-bold ">
-        <h1 className="text-5xl text-center uppercase md:p-10 p-4 md:text-6xl xl:text-7xl">
+        <h1 className="text-3xl text-center uppercase md:p-10 p-4 md:text-3xl xl:text-3xl">
           {data[currentSlide].title}
         </h1>
-        <button className="bg-red-500 text-white py-4 px-8 rounded-lg ">
-          Order Now
-        </button>
+        <Link href="menu">
+          <button className="bg-red-500 text-white py-4 px-8 rounded-lg ">
+            Sipariş Ver
+          </button>
+        </Link>
       </div>
       {/* IMAGE CONTAINER */}
       <div className="w-full flex-1 relative">

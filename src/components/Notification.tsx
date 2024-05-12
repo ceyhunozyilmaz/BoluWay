@@ -1,9 +1,15 @@
-import React from 'react'
+import Link from "next/link";
+import React from "react";
 
 const Notification = () => {
   return (
-    <div className='h-12 bg-red-500 text-white px-4 flex items-center justify-center text-center text-sm md:text-base cursor-pointer'>Free delivery for all orders over $50. Order your food now!</div>
-  )
-}
+    <Link href="/menu">
+      <div className="h-12 bg-red-500 text-white px-4 flex items-center justify-center text-center text-sm md:text-base cursor-pointer">
+        50$ üzeri tüm siparişler için ücretsiz teslimat. Yemeğinizi şimdi
+        sipariş edin!
+      </div>
+    </Link>
+  );
+};
 
-export default Notification
+export default Notification;
