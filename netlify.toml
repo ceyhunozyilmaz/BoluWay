@@ -1,2 +1,3 @@
-[build]
-  environment = { PRISMA_FORCE_NAPI=true }
+
+
+  environment = { PRISMA_FORCE_NAPI="true" }
